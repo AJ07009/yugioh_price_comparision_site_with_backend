@@ -1,2 +1,2 @@
-# yugioh_price_comparision_site_with_backend
+# Yugi check me
 A simple price comparison site to compare yugioh card prices in SA, from all respected vendors
