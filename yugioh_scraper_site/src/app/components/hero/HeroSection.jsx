@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from 'react';
-// import fs from 'fs';
+import fs from 'fs';
 
 const HeroSection = () => {
 const [searchTerm, setSearchTerm] = useState('');
@@ -14,6 +14,12 @@ const handleSearch = async () => {
     setSearchResults(results);
 };
 
+const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+        handleSearch();
+    }
+};
+
 return (
     <div className="container md:px-6 w-full md:py-24 lg:py-32">
 
@@ -23,6 +29,7 @@ return (
             <input
             type="search"
             placeholder="    Search for products..."
+            onKeyDown={handleKeyDown}
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="px-4 py-2 text-lg text-gray-700 w-full h-12 rounded-lg"
